@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:faker/faker.dart';
+
 class Recipe {
   String label;
   String imageUrl;
@@ -10,21 +11,20 @@ class Recipe {
     this.imageUrl,
   );
 
-  
   static List<Recipe> samples = [
     Recipe(Faker.withGenerator(random).food.cuisine(),
-    Faker.withGenerator(random).image.image()),
+        Faker.withGenerator(random).image.image(keywords: ['food'])),
     Recipe(Faker.withGenerator(random).food.cuisine(),
-    Faker.withGenerator(random).image.image()),
+        Faker.withGenerator(random).image.image(keywords: ['food'])),
     Recipe(Faker.withGenerator(random).food.cuisine(),
-    Faker.withGenerator(random).image.image()),
+        Faker.withGenerator(random).image.image(keywords: ['food'])),
     Recipe(Faker.withGenerator(random).food.cuisine(),
-    Faker.withGenerator(random).image.image()),
+        Faker.withGenerator(random).image.image(keywords: ['food'])),
     Recipe(Faker.withGenerator(random).food.cuisine(),
-    Faker.withGenerator(random).image.image()),
+        Faker.withGenerator(random).image.image(keywords: ['food'])),
     Recipe(Faker.withGenerator(random).food.cuisine(),
-    Faker.withGenerator(random).image.image()),
+        Faker.withGenerator(random).image.image(keywords: ['food'])),
     Recipe(Faker.withGenerator(random).food.cuisine(),
-    Faker.withGenerator(random).image.image()),
+        Faker.withGenerator(random).image.image(keywords: ['food'])),
   ];
 }

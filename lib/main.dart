@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Card(
       child: Column(
         children: <Widget>[
-          Image(image: AssetImage(recipe.imageUrl)),
+          Image.network(recipe.imageUrl),
           Text(recipe.label),
         ],
       ),
