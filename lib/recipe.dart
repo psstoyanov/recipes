@@ -25,8 +25,23 @@ class Recipe {
       ingredients: [
         Ingredient(
           Random().nextDouble() * 10,
-          '',
-          Faker.withGenerator(random).jwt.toString()
+          Faker.withGenerator(random).lorem.word(),
+          Faker.withGenerator(random).food.dish(),
+        ),
+        Ingredient(
+          Random().nextDouble() * 10,
+          Faker.withGenerator(random).lorem.word(),
+          Faker.withGenerator(random).food.dish(),
+        ),
+        Ingredient(
+          Random().nextDouble() * 10,
+          Faker.withGenerator(random).lorem.word(),
+          Faker.withGenerator(random).food.dish(),
+        ),
+        Ingredient(
+          Random().nextDouble() * 10,
+          Faker.withGenerator(random).lorem.word(),
+          Faker.withGenerator(random).food.dish(),
         ),
       ],
     ),
@@ -37,8 +52,8 @@ class Recipe {
       ingredients: [
         Ingredient(
           Random().nextDouble() * 10,
-          '',
-          Faker.withGenerator(random).jwt.toString()
+          Faker.withGenerator(random).lorem.word(),
+          Faker.withGenerator(random).food.dish(),
         ),
       ],
     ),
@@ -49,8 +64,8 @@ class Recipe {
       ingredients: [
         Ingredient(
           Random().nextDouble() * 10,
-          '',
-          Faker.withGenerator(random).jwt.toString()
+          Faker.withGenerator(random).lorem.word(),
+          Faker.withGenerator(random).food.dish(),
         ),
       ],
     ),
@@ -61,8 +76,20 @@ class Recipe {
       ingredients: [
         Ingredient(
           Random().nextDouble() * 10,
-          '',
-          Faker.withGenerator(random).jwt.toString()
+          Faker.withGenerator(random).lorem.word(),
+          Faker.withGenerator(random).food.dish(),
+        ),
+      ],
+    ),
+    Recipe(
+      label: Faker.withGenerator(random).food.cuisine(),
+      imageUrl: Faker.withGenerator(random).image.image(keywords: ['food']),
+      servings: 4,
+      ingredients: [
+        Ingredient(
+          Random().nextDouble() * 10,
+          Faker.withGenerator(random).lorem.word(),
+          Faker.withGenerator(random).food.dish(),
         ),
       ],
     ),
