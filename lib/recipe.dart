@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:faker/faker.dart';
@@ -5,26 +7,76 @@ import 'package:faker/faker.dart';
 class Recipe {
   String label;
   String imageUrl;
+  int servings;
+  List<Ingredient> ingredients;
 
-  Recipe(
-    this.label,
-    this.imageUrl,
-  );
+  Recipe({
+    required this.label,
+    required this.imageUrl,
+    this.servings = 1,
+    required this.ingredients,
+  });
 
   static List<Recipe> samples = [
-    Recipe(Faker.withGenerator(random).food.cuisine(),
-        Faker.withGenerator(random).image.image(keywords: ['food'])),
-    Recipe(Faker.withGenerator(random).food.cuisine(),
-        Faker.withGenerator(random).image.image(keywords: ['food'])),
-    Recipe(Faker.withGenerator(random).food.cuisine(),
-        Faker.withGenerator(random).image.image(keywords: ['food'])),
-    Recipe(Faker.withGenerator(random).food.cuisine(),
-        Faker.withGenerator(random).image.image(keywords: ['food'])),
-    Recipe(Faker.withGenerator(random).food.cuisine(),
-        Faker.withGenerator(random).image.image(keywords: ['food'])),
-    Recipe(Faker.withGenerator(random).food.cuisine(),
-        Faker.withGenerator(random).image.image(keywords: ['food'])),
-    Recipe(Faker.withGenerator(random).food.cuisine(),
-        Faker.withGenerator(random).image.image(keywords: ['food'])),
+    Recipe(
+      label: Faker.withGenerator(random).food.cuisine(),
+      imageUrl: Faker.withGenerator(random).image.image(keywords: ['food']),
+      servings: 4,
+      ingredients: [
+        Ingredient(
+          Random().nextDouble() * 10,
+          '',
+          Faker.withGenerator(random).jwt.toString()
+        ),
+      ],
+    ),
+    Recipe(
+      label: Faker.withGenerator(random).food.cuisine(),
+      imageUrl: Faker.withGenerator(random).image.image(keywords: ['food']),
+      servings: 4,
+      ingredients: [
+        Ingredient(
+          Random().nextDouble() * 10,
+          '',
+          Faker.withGenerator(random).jwt.toString()
+        ),
+      ],
+    ),
+    Recipe(
+      label: Faker.withGenerator(random).food.cuisine(),
+      imageUrl: Faker.withGenerator(random).image.image(keywords: ['food']),
+      servings: 4,
+      ingredients: [
+        Ingredient(
+          Random().nextDouble() * 10,
+          '',
+          Faker.withGenerator(random).jwt.toString()
+        ),
+      ],
+    ),
+    Recipe(
+      label: Faker.withGenerator(random).food.cuisine(),
+      imageUrl: Faker.withGenerator(random).image.image(keywords: ['food']),
+      servings: 4,
+      ingredients: [
+        Ingredient(
+          Random().nextDouble() * 10,
+          '',
+          Faker.withGenerator(random).jwt.toString()
+        ),
+      ],
+    ),
   ];
+}
+
+class Ingredient {
+  double quantity;
+  String measure;
+  String name;
+
+  Ingredient(
+    this.quantity,
+    this.measure,
+    this.name,
+  );
 }
